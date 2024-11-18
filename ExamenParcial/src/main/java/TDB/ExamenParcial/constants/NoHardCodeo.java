@@ -1,7 +1,7 @@
 package TDB.ExamenParcial.constants;
 
 public class NoHardCodeo {
-    public static final String ALUMNO_BASE = "/alumno";
+    public static final String ALUMNO_BASE = "alumno";
     public static final String GET_ALL = "/findAll";
     public static final String CREATE = "/create";
     public static final String GET_BY_ID = "/findById/{id}";
