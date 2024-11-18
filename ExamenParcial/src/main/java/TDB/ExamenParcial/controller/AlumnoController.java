@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import TDB.ExamenParcial.constants.NoHardCodeo;
 import TDB.ExamenParcial.model.AlumnoModel;
+
 import TDB.ExamenParcial.services.AlumnoService;
 import ch.qos.logback.classic.Logger;
 
 @RestController
-@RequestMapping("alumno")
+@RequestMapping(NoHardCodeo.ALUMNO_BASE)
+//@RequestMapping("alumno")
 public class AlumnoController {
     private static final Logger logger = (Logger) LoggerFactory.getLogger(AlumnoController.class);
     @Autowired
