@@ -27,22 +27,21 @@ public class AlumnoController {
     @Autowired
     AlumnoService alumnoService;
 
-    @GetMapping("/findAll")
+    //@GetMapping("/findAll")
+    @GetMapping(NoHardCodeo.GET_ALL)
     public List<AlumnoModel> findAll(){
         List<AlumnoModel> lista = alumnoService.findAll();
         return lista;
     }
 
-    @PostMapping("/create")
+    //@PostMapping("/create")
+    @PostMapping(NoHardCodeo.CREATE)
     public AlumnoModel create(@RequestBody AlumnoModel model){
         return alumnoService.add(model);
     }
 
-    //findById
-    //update
-    //delete
-
-    @GetMapping("/obtenerAlumno/{id}")
+    //@GetMapping("/obtenerAlumno/{id}")
+    @GetMapping(NoHardCodeo.GET_BY_ID)
     public AlumnoModel obtenerAlumno(@PathVariable int id) {
         AlumnoModel alum = alumnoService.findById(id);
         logger.info("Obteniendo alumno con id: {}", id);
@@ -50,17 +49,20 @@ public class AlumnoController {
         return alumnoService.findById(id);
     }
 
-    @GetMapping("/findById/{id}")
+    //@GetMapping("/findById/{id}")
+    @GetMapping(NoHardCodeo.GET_BY_ID)
     public AlumnoModel findById(@PathVariable Integer id) {
         return alumnoService.findById(id);
     }
 
-    @PutMapping("/update")
+    //@PutMapping("/update")
+    @PutMapping(NoHardCodeo.UPDATE)
     public AlumnoModel update(@RequestBody AlumnoModel model){
     return alumnoService.update(model);
     }
 
-    @DeleteMapping("/delete/{id}")
+    //@DeleteMapping("/delete/{id}")
+    @DeleteMapping(NoHardCodeo.DELETE)
     public String delete(@PathVariable Integer id) {
         boolean isDeleted = alumnoService.delete(id);
         return isDeleted ? "Usuario eliminado correctamente" : "Error al eliminar usuario";
