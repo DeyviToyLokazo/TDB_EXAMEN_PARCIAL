@@ -1,0 +1,25 @@
+<configuration>
+    <!-- Appender para la consola -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender para archivo de logs -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/alumno.log</file> <!-- Aqui se guardarán los logs -->
+        <append>true</append> <!-- Si es true, los logs se añadiran al final del archivo -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuración de la raiz del logger -->
+    <root level="debug">
+        <!-- Vinculamos los appenders (consola y archivo) a la configuración raiz -->
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
