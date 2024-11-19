@@ -55,7 +55,7 @@ public class AlumnoController {
             logger.error("Error al crear el alumno: {}", e.getMessage(), e);
             return null; // Retornar nulo en caso de error
         } finally {
-            // Usamos el logger para informar que el método se ejecutó
+            // Usamos el logger para informar que el metodo se ejecuto
             logger.info("Metodo create ejecutado");
         }
     }
